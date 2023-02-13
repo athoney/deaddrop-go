@@ -1,14 +1,10 @@
-Sun Feb 12 16:46:03 MST 2023 - Failed Read: athoney attempted to read messages with wrong password
-Sun Feb 12 16:46:27 MST 2023 - Failed Read: cvdub attempted to read messages with wrong password
-Sun Feb 12 16:48:45 MST 2023 - Failed Read Pass: cvdub attempted to read messages with wrong password
-Sun Feb 12 16:48:53 MST 2023 - Failed Read User: cvdu cannot read messages for non existent user
-Sun Feb 12 16:50:19 MST 2023 - Send Fail: cvdu is not a user
-Sun Feb 12 16:51:25 MST 2023 - New User: cvdub created nfl
-Sun Feb 12 16:53:21 MST 2023 - Failed New User: cvdub attempted to make a new user with wrong password
-Sun Feb 12 17:18:59 MST 2023 - Send: cvdub recieved a message
-Sun Feb 12 17:22:18 MST 2023 - Send: cvdub recieved a message from athoney
-Sun Feb 12 19:19:29 MST 2023 - Failed Send: athoney attempted to send a message with the wrong password.
-Sun Feb 12 19:19:50 MST 2023 - Failed Send: athoney attempted to send a message with the wrong password.
-Sun Feb 12 19:19:56 MST 2023 - Failed Send: cvdu is not a user
-Sun Feb 12 19:20:19 MST 2023 - Failed Send: cvdu is not a user
-Sun Feb 12 19:20:37 MST 2023 - Failed Send: recipient cvdu is not a user
+Sun Feb 12 19:55:08 MST 2023 - New User: void created athoney
+Sun Feb 12 19:55:29 MST 2023 - New User: athoney created athoney1
+Sun Feb 12 19:55:39 MST 2023 - Failed New User Password: athoney1 attempted to make a new user with wrong password
+Sun Feb 12 19:55:59 MST 2023 - New User: athoney1 created athoney2
+Sun Feb 12 19:56:18 MST 2023 - Send: athoney1 recieved a message from athoney
+Sun Feb 12 19:56:30 MST 2023 - Failed Send: athoney2 attempted to send a message with the wrong password
+Sun Feb 12 19:57:21 MST 2023 - Failed Send: recipient athoney6 is not a user
+Sun Feb 12 19:58:10 MST 2023 - Read: athoney1 read their messages
+Sun Feb 12 19:58:31 MST 2023 - Failed Read User: athoney6 cannot read messages for non existent user
+Sun Feb 12 19:58:35 MST 2023 - Failed Read Password: athoney1 attempted to read messages with wrong password
