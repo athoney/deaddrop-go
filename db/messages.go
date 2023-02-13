@@ -2,6 +2,8 @@ package db
 
 import (
 	"log"
+
+	"github.com/andey-robins/deaddrop-go/logger"
 )
 
 // GetMessagesForUser assumes that a user has already been
@@ -31,12 +33,14 @@ func GetMessagesForUser(user string) []string {
 		}
 		messages = append(messages, message)
 	}
+	// Log reading a message from a user that exists
+	logger.LogReadMessage(user)
 	return messages
 }
 
 // saveMessage will process the transaction to place a message
 // into the database
-func SaveMessage(message, recipient string) {
+func SaveMessage(message, recipient, sender string) {
 	database := Connect().Db
 
 	database.Exec(`
@@ -46,4 +50,6 @@ func SaveMessage(message, recipient string) {
 			?
 		);
 	`, recipient, message)
+	// Log sending message to a user that exists
+	logger.LogSentMessage(recipient, sender)
 }
