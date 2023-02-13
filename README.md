@@ -22,14 +22,14 @@ Then run `go run main.go -new -user <username here>` and you will be prompted to
 Data gets stored into the local database file dd.db. This file will not by synched to git repos. Delete this file if you don't set up a user properly on the first go
 
 ## Logging Strategy
-To add logging functionality, I created a new package called logger. This design choice was made to help with logical seperation of code and extensibility. The log reflects the following actions with timestamps:
+To add logging functionality, I created a new package called logger. This design choice was made to help with logical seperation of code and extensibility. The logging code does not affect current functionality. The log reflects the following actions with timestamps:
 - Sent Messages:
   - Successful message with sender and recipient
-  - Failed send on account of non exisistent recipient
+  - Failed send on account of non-existent recipient
   - Failed send on account of wrong sender password
 - Read Messages:
   - Successful read with username
-  - Failed read on account of non exisistent user
+  - Failed read on account of non-existent user
   - Failed read on account of wrong password
 - New User:
   - Successful creation of new user and the creator
