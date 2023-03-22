@@ -7,7 +7,6 @@ import (
 	"os"
 
 	"github.com/andey-robins/deaddrop-go/db"
-	"github.com/andey-robins/deaddrop-go/logger"
 	"github.com/andey-robins/deaddrop-go/session"
 )
 
@@ -20,12 +19,12 @@ func SendMessage(to, from string) {
 	}
 	err := session.Authenticate(from)
 	if err != nil {
-		logger.LogFailedSentMessageSender(from)
+		log.Println("Failed Send: recipient " + to + " is not a user")
 		log.Fatalf("Unable to authenticate user")
 	}
 
 	if !db.UserExists(to) {
-		logger.LogFailedSentMessage(to)
+		log.Println("Failed Send: " + to + " attempted to send a message with the wrong password")
 		log.Fatalf("Destination user does not exist")
 	}
 

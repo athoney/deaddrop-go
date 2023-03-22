@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"os"
 	"time"
 
 	"github.com/andey-robins/deaddrop-go/new"
@@ -11,6 +13,9 @@ import (
 )
 
 func main() {
+	file, _ := os.OpenFile("./log.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+
+	log.SetOutput(file)
 	fmt.Println(time.Now().Format(time.UnixDate))
 	flag.Usage = func() {
 		fmt.Println("Run with -help for help information")
