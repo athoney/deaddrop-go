@@ -1,0 +1,9 @@
+2023/03/23 20:23:23 New User: void created athoney
+2023/03/23 20:23:35 New User: athoney created maggie
+2023/03/23 20:23:46 New User: maggie created miley
+2023/03/23 20:25:14 Send: maggie recieved a message from athoney
+2023/03/23 20:26:02 Send: maggie recieved a message from miley
+2023/03/23 20:32:33 MAC failure: 'there is no new album' from miley cannot be verified!
+2023/03/23 20:40:27 Send: athoney recieved a message from miley
+2023/03/23 20:42:11 Send: athoney recieved a message from miley
+2023/03/23 20:43:14 MAC failure: 'me' from miley cannot be verified!

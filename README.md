@@ -21,8 +21,8 @@ Then run `go run main.go -new -user <username here>` and you will be prompted to
 
 Data gets stored into the local database file dd.db. This file will not by synched to git repos. Delete this file if you don't set up a user properly on the first go
 
-## Logging Strategy
-To add logging functionality, I created a new package called logger. This design choice was made to help with logical seperation of code and extensibility. The log reflects the following actions with timestamps:
+## Logging Strategy **(REVISED)**
+To add logging functionality, I used the Golang log package. The log reflects the following actions:
 - Sent Messages:
   - Successful message with sender and recipient
   - Failed send on account of non exisistent recipient
@@ -37,3 +37,6 @@ To add logging functionality, I created a new package called logger. This design
 
 ## Notes
 The update that I made was to add an authentication step to send a message. There is now a new flag for the -send flag to include a sender. Usage: `go run main.go -send -to <user1> -from <user2>`. It should be noted that this does not vastly increase the security of this application since the database is still in plaintext.
+
+## MAC Strategy
+When a user sends a message, they must authenticate (see Notes) and a MAC is added to the database with the message. This MAC is checked when a user reads their messages and alerts the user if the MAC does not match. Moreover, the sender name is also reported when a user reads their messages. This new functionality was verified by modifying the databse with additional SQL statements that 1) altered the MAC and 2) altered the message to ensure that changes were logged and users were alerted. Moreover, the application does not allow for a user to update a MAC or message data.

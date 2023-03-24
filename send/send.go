@@ -2,6 +2,9 @@ package send
 
 import (
 	"bufio"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
 	"log"
 	"os"
@@ -30,7 +33,20 @@ func SendMessage(to, from string) {
 
 	message := getUserMessage()
 
-	db.SaveMessage(message, to, from)
+	// Generate HMAC
+	h := hmac.New(sha256.New, []byte(os.Getenv("KEY")))
+
+	// Write Data to it
+	_, err = h.Write([]byte(message))
+	if err != nil {
+		log.Println("MAC could not be written")
+		log.Fatalf("MAC could not be written")
+	}
+
+	// Get result and encode as hexadecimal string
+	hash := hex.EncodeToString(h.Sum(nil))
+
+	db.SaveMessage(message, to, from, hash)
 }
 
 // getUserMessage prompts the user for the message to send

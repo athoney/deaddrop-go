@@ -10,10 +10,17 @@ import (
 	"github.com/andey-robins/deaddrop-go/new"
 	"github.com/andey-robins/deaddrop-go/read"
 	"github.com/andey-robins/deaddrop-go/send"
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	file, _ := os.OpenFile("./log.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 
 	log.SetOutput(file)
 	fmt.Println(time.Now().Format(time.UnixDate))
